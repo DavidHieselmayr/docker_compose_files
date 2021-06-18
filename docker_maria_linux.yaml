@@ -1,0 +1,13 @@
+# Use root/example as user/password credentials
+version: '3.1'
+services:
+    mariadb:
+        image: mariadb
+        restart: always
+        environment:
+            MYSQL_ROOT_PASSWORD: secret
+            MYSQL_DATABASE: mymaria
+        volumes:
+            - /home/david/docker/storage/mariadb:/var/lib/mysql
+        ports: 
+            - 3306:3306
